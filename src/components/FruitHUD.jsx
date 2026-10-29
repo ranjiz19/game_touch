@@ -146,15 +146,20 @@ export function FruitHUD({
       ) : (
         /* SINGLE PLAYER HEADER */
         <div className="flex justify-between items-start gap-4">
-          {/* Left: Score Box */}
-          <div className="flex flex-col gap-1 pointer-events-auto">
-            <div className="flex items-center gap-2">
-              <span className="text-4xl sm:text-6xl font-black font-cyber text-amber-300 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                {score.toLocaleString()}
-              </span>
+          {/* Left: Score Box with Logo Avatar */}
+          <div className="flex items-center gap-3 pointer-events-auto">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-amber-400/80 shadow-[0_0_12px_rgba(255,183,0,0.4)] flex-shrink-0 bg-black/60">
+              <img src="/Logo.jpeg" alt="Logo" className="w-full h-full object-cover" />
             </div>
-            <div className="text-xs font-bold uppercase tracking-wider text-amber-200/90 drop-shadow">
-              BUAH TERPOTONG: {fruitsSliced}
+            <div className="flex flex-col gap-0.5">
+              <div className="flex items-center gap-2">
+                <span className="text-4xl sm:text-6xl font-black font-cyber text-amber-300 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] leading-none">
+                  {score.toLocaleString()}
+                </span>
+              </div>
+              <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-200/90 drop-shadow">
+                BUAH TERPOTONG: {fruitsSliced}
+              </div>
             </div>
           </div>
 

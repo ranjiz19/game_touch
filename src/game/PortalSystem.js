@@ -10,7 +10,7 @@ export const PORTAL_DIRECTIVE = {
 export const SEAL_TYPES = [
   {
     id: 'DELTA',
-    name: 'DELTA SEAL (三角)',
+    name: 'DELTA SEAL',
     // Normalized coordinates [0..1] relative to seal bounding box
     points: [
       { x: 0.5, y: 0.1 },
@@ -21,7 +21,7 @@ export const SEAL_TYPES = [
   },
   {
     id: 'CIRCLE',
-    name: 'RING SEAL (円環)',
+    name: 'RING SEAL',
     points: [
       { x: 0.5, y: 0.1 },
       { x: 0.85, y: 0.35 },
@@ -34,7 +34,7 @@ export const SEAL_TYPES = [
   },
   {
     id: 'DIAMOND',
-    name: 'DIAMOND SEAL (菱形)',
+    name: 'DIAMOND SEAL',
     points: [
       { x: 0.5, y: 0.1 },
       { x: 0.88, y: 0.5 },
@@ -45,7 +45,7 @@ export const SEAL_TYPES = [
   },
   {
     id: 'Z_RUNE',
-    name: 'Z-RUNE (雷光)',
+    name: 'Z-RUNE',
     points: [
       { x: 0.15, y: 0.2 },
       { x: 0.85, y: 0.2 },
@@ -252,14 +252,14 @@ export class PortalSystem {
     }
     ctx.restore();
 
-    // 3. Central Kanji / Dimensional Rune
-    ctx.font = `bold ${Math.floor(radius * 0.45)}px 'Orbitron', 'Noto Sans JP', sans-serif`;
+    // 3. Central Dimensional Rune Icon
+    ctx.font = `bold ${Math.floor(radius * 0.45)}px 'Orbitron', sans-serif`;
     ctx.fillStyle = primaryColor;
     ctx.shadowColor = primaryColor;
     ctx.shadowBlur = 20;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    const rune = this.activeSeal ? '封' : (stabRatio < 0.4 ? '危' : '門');
+    const rune = this.activeSeal ? '⚡' : (stabRatio < 0.4 ? '!' : '◈');
     ctx.fillText(rune, 0, 0);
 
     ctx.restore();

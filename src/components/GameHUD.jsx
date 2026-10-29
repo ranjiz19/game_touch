@@ -52,7 +52,7 @@ export function GameHUD({
       return {
         bg: 'bg-cyan-950/80 border-cyan-500 text-cyan-300',
         icon: <Zap className="w-5 h-5 text-cyan-400" />,
-        title: 'DIRECTIVE: PURGE CYAN (斬)',
+        title: 'DIRECTIVE: PURGE CYAN',
         desc: 'Potong Orb Cyan! Hindari Orb Magenta & Glitch Trap.'
       };
     }
@@ -60,14 +60,14 @@ export function GameHUD({
       return {
         bg: 'bg-fuchsia-950/80 border-fuchsia-500 text-fuchsia-300',
         icon: <Zap className="w-5 h-5 text-fuchsia-400" />,
-        title: 'DIRECTIVE: PURGE MAGENTA (裂)',
+        title: 'DIRECTIVE: PURGE MAGENTA',
         desc: 'Potong Orb Magenta! Hindari Orb Cyan & Glitch Trap.'
       };
     }
     return {
       bg: 'bg-emerald-950/80 border-emerald-500 text-emerald-300',
       icon: <Shield className="w-5 h-5 text-emerald-400" />,
-      title: 'DIRECTIVE: DEFEND (盾)',
+      title: 'DIRECTIVE: DEFEND',
       desc: 'Buka Telapak Tangan untuk Menahan Gelombang!'
     };
   };

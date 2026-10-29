@@ -13,7 +13,7 @@ export function TutorialModal({ isOpen, onClose }) {
         <div className="flex justify-between items-center border-b border-stone-800 pb-3">
           <div className="flex items-center gap-2.5 text-amber-400 font-cyber font-bold text-lg">
             <Swords className="w-5 h-5" />
-            <span>PANDUAN BERMAIN FRUIT NINJA</span>
+            <span>PANDUAN BERMAIN SLICEY</span>
           </div>
           <button onClick={onClose} className="text-slate-400 hover:text-white">
             <X className="w-6 h-6" />
@@ -26,7 +26,7 @@ export function TutorialModal({ isOpen, onClose }) {
             <Swords className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
             <div>
               <strong className="text-amber-300 font-bold block mb-0.5">1. Ayunkan Tangan / Jari di Depan Kamera</strong>
-              Ayunkan telunjuk atau tangan Anda dengan cepat di depan webcam seperti pedang katana untuk memotong buah segar yang terlempar ke udara.
+              Ayunkan telunjuk atau tangan Anda dengan cepat di depan webcam layaknya pedang tajam untuk memotong buah segar yang terlempar ke udara.
             </div>
           </div>
 
@@ -58,7 +58,7 @@ export function TutorialModal({ isOpen, onClose }) {
             <Swords className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
             <div>
               <strong className="text-cyan-300 font-bold block mb-0.5">5. Mode Multiplayer 2 Pemain (Versus & Co-Op)</strong>
-              Dua orang dapat berdiri berdampingan di depan webcam yang sama! Pemain di sisi kiri mengendalikan <span className="text-cyan-400 font-bold">Katana Biru (P1)</span> dan sisi kanan mengendalikan <span className="text-rose-400 font-bold">Katana Merah (P2)</span>. Atau P2 dapat menggunakan mouse!
+              Dua orang dapat berdiri berdampingan di depan webcam yang sama! Pemain di sisi kiri mengendalikan <span className="text-cyan-400 font-bold">Pedang Biru (P1)</span> dan sisi kanan mengendalikan <span className="text-rose-400 font-bold">Pedang Merah (P2)</span>. Atau P2 dapat menggunakan mouse!
             </div>
           </div>
 

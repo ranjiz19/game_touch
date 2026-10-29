@@ -1,9 +1,8 @@
 // MainMenu.jsx - Fruit Slice Ninja Motion Edition Main Screen
 
 import React from 'react';
-import { Play, Trophy, HelpCircle, Sliders, Sparkles, Camera, Loader2, AlertTriangle, Swords, Zap, Users } from 'lucide-react';
+import { Trophy, HelpCircle, Sliders, Swords, Zap, Users } from 'lucide-react';
 import { getHighScore } from '../utils/storage.js';
-import { TRACKING_STATUS } from '../hooks/useHandTracking.js';
 import { GAME_MODE } from '../game/GameEngine.js';
 
 export function MainMenu({
@@ -16,54 +15,16 @@ export function MainMenu({
 }) {
   const highScore = getHighScore();
 
-  const getStatusBadge = () => {
-    switch (trackingStatus) {
-      case TRACKING_STATUS.READY:
-        return (
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/60 text-emerald-300 text-xs font-mono shadow-[0_0_15px_rgba(16,185,129,0.3)]">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>AI SENSOR: READY (KAMERA AKTIF)</span>
-          </div>
-        );
-      case TRACKING_STATUS.LOADING_MODEL:
-        return (
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-950/80 border border-amber-500/60 text-amber-300 text-xs font-mono">
-            <Loader2 className="w-3.5 h-3.5 animate-spin" />
-            <span>MEMUAT MODEL AI MEDIAPIPE...</span>
-          </div>
-        );
-      case TRACKING_STATUS.REQUESTING_CAMERA:
-        return (
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/60 text-cyan-300 text-xs font-mono">
-            <Camera className="w-3.5 h-3.5 animate-pulse" />
-            <span>MEMINTA IZIN WEBCAM...</span>
-          </div>
-        );
-      case TRACKING_STATUS.PERMISSION_DENIED:
-        return (
-          <button
-            onClick={onRetryCamera}
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-950/90 border border-rose-500 text-rose-300 text-xs font-mono hover:bg-rose-900 cursor-pointer"
-          >
-            <AlertTriangle className="w-3.5 h-3.5" />
-            <span>IZIN KAMERA DITOLAK (KLIK COBA LAGI)</span>
-          </button>
-        );
-      default:
-        return (
-          <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-slate-300 text-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-slate-400"></span>
-            <span>STANDBY</span>
-          </div>
-        );
-    }
-  };
-
   return (
     <div className="absolute inset-0 z-20 flex flex-col items-center justify-between p-6 sm:p-10 text-center select-none bg-gradient-to-b from-stone-950/80 via-transparent to-stone-950/95 overflow-y-auto">
-      {/* Top Bar with Live Sensor Badge & High Score */}
+      {/* Top Bar with Top-Left Logo & High Score */}
       <div className="w-full flex justify-between items-center max-w-5xl">
-        {getStatusBadge()}
+        <div className="flex items-center gap-3">
+          {/* Logo di Kiri Atas */}
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-amber-400 shadow-[0_0_18px_rgba(255,183,0,0.45)] bg-black/70 flex-shrink-0 p-0.5 transition-transform hover:scale-105">
+            <img src="/Logo.jpeg" alt="Logo" className="w-full h-full object-cover rounded-full" />
+          </div>
+        </div>
 
         <div className="flex items-center gap-2 px-5 py-2 rounded-xl bg-black/60 border border-amber-500/50 text-amber-400 font-mono shadow-lg backdrop-blur">
           <Trophy className="w-5 h-5 text-amber-400" />
@@ -72,7 +33,7 @@ export function MainMenu({
         </div>
       </div>
 
-      {/* Hero Title: Fruit Slice Ninja */}
+      {/* Hero Title: Slicey */}
       <div className="flex flex-col items-center my-auto py-4">
         <div className="text-xs sm:text-sm tracking-[0.35em] font-mono text-amber-400 uppercase mb-2 drop-shadow">
           // MOTION WEBCAM MULTIPLAYER //
@@ -80,11 +41,8 @@ export function MainMenu({
 
         <div className="relative">
           <h1 className="text-5xl sm:text-8xl md:text-9xl font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-amber-200 via-orange-400 to-red-600 font-cyber drop-shadow-[0_8px_25px_rgba(255,140,0,0.6)]">
-            FRUIT NINJA
+            SLICEY
           </h1>
-          <div className="absolute -top-3 -right-8 text-2xl sm:text-4xl font-black text-amber-400 font-mono">
-            果切
-          </div>
         </div>
 
         <h2 className="text-base sm:text-2xl font-bold tracking-[0.2em] text-red-400 font-cyber -mt-1 sm:-mt-3 uppercase drop-shadow">

@@ -551,14 +551,7 @@ export class GameEngine {
       ctx.stroke();
     }
 
-    ctx.save();
-    ctx.font = "900 160px 'Orbitron', 'Noto Sans JP', serif";
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText('刀', w * 0.3, h * 0.45);
-    ctx.fillText('果', w * 0.7, h * 0.45);
-    ctx.restore();
+    // Dojo background wood planks clean aesthetic
   }
 
   destroy() {
